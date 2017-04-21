@@ -1,10 +1,30 @@
 <!doctype html>
 <?php
 session_start();
-if(isset($_SESSION['username']))
+if(isset($_SESSION['username'])){
 	echo "Hello ".$_SESSION['username'];
-else{
-		print("Password Incorrest");
+		print("		<div id = \"logout\">
+			<form method=\"POST\" action=\"logout.php\">
+				<div class=\"container\">
+					<button type=\"submit\">Logout</button>
+				</div>
+			</form>
+		</div>");
+		
+}else{
+		print("		<div id = \"login\">
+			<form method=\"POST\" action=\"login.php\">
+				<div class=\"container\">
+					<label><b>Username</b></label>
+					<input type = \"text\" placeholder= \"Username\" name=\"username\">
+					
+					<label><b>Password</b></label>
+					<input type=\"password\" placeholder= \"Password\" name=\"password\">
+					
+					<button type=\"submit\">Login</button>
+				</div>
+			</form>
+		</div>");
 	}
 ?>
 <html lang="en">
@@ -17,19 +37,6 @@ else{
 		<div id="logo">
 			<img src = "">
 		</div> 
-		<div id = "login">
-			<form method="POST" action="login.php">
-				<div class="container">
-					<label><b>Username</b></label>
-					<input type = "text" placeholder= "Username" name="username">
-					
-					<label><b>Password</b></label>
-					<input type="password" placeholder= "Password" name="password">
-					
-					<button type="submit">Login</button>
-				</div>
-			</form>
-		</div>
 		<nav>
 			<ol>
 				<li> Manage Bookings </li>
