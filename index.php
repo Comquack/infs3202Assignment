@@ -1,12 +1,10 @@
 <!doctype html>
 <?php
 session_start();
-echo "Hello "
-print("http no ecchi");
 if(isset($_SESSION['username']))
 	echo "Hello ".$_SESSION['username'];
 else{
-		print("eche");
+		print("Password Incorrest");
 	}
 ?>
 <html lang="en">
