@@ -4,10 +4,10 @@
 		$_SESSION['username'] = "infs";
 		$_SESSION['password'] = "3202";
 		echo "yes";
-		header("Location: index.php");
+		header("Location: index1.php");
 	}
 	else{
 		echo "no";
-		header("Location: index.php");
+		header("Location: index1.php");
 	}
 ?>
