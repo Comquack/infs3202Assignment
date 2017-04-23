@@ -1,0 +1,56 @@
+<!doctype html>
+<?php
+session_start();
+?>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> Surprise me </title>
+	</head>
+	
+	<body>
+		<div id="logo">
+			<img src = "./images/airline.png" height="100px" width="100px">
+		</div> 
+		
+		<form method="POST" action="login.php">
+			<div class="container">
+				<label><b>Username</b></label>
+				<input type = "text" placeholder= "Username" name="username">
+				
+				<label><b>Password</b></label>
+				<input type="password" placeholder= "Password" name="password">
+				
+				<button type="submit">Login</button>
+				<a href="signup.html">Sign up</a>
+			</div>
+		</form>
+		
+		<nav>
+			<ol>
+				<li><a href ="manage.html"> Manage Bookings</a> </li>
+				<li><a href ="surprise.html">Surprise me</a></li>
+			</ol>
+		</nav>
+		
+		<div id="pickone">
+			<div id ="pick1">
+				<img src = "">
+				<button type = "submit">INFO</button>
+				<button type = "submit">BOOK</button>
+			<div>
+			
+			<div id ="pick2">
+				<img src ="">
+				<button type = "submit">INFO</button>
+				<button type = "submit">BOOK</button>
+			</div>
+			
+			<div id = "pick3">
+				<img src ="">
+				<button type = "submit">INFO</button>
+				<button type = "submit">BOOK</button>
+			</div>
+		</div>
+	</body>
+</html>

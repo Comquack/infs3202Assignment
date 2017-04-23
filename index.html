@@ -6,11 +6,18 @@ session_start();
 	<head>
 		<meta charset="utf-8">
 		<title> Travel test </title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<script>
+  		$( function() {
+   			$( "#datepicker" ).datepicker();
+  		} );
+ 		 </script>
 	</head>
 	
 	<body>
 		<div id="logo">
-			<img src = "">
+			<img src = "./images/airline.png" height="100px" width="100px">
 		</div> 
 	
 		<form method="POST" action="login.php">
@@ -22,26 +29,27 @@ session_start();
 				<input type="password" placeholder= "Password" name="password">
 				
 				<button type="submit">Login</button>
+				<a href="signup.html">Sign up</a>
 			</div>
 		</form>
 		
 		<nav>
 			<ol>
-				<li> Manage Bookings </li>
-				<li> Surprise me </li>
+				<li><a href ="manage.html"> Manage Bookings</a> </li>
+				<li><a href ="surprise.html">Surprise me</a></li>
 			</ol>
 		</nav>
 		
 		<form method="POST" action="flight.php">
 		<div class="travelbanner">
 			<div class="container">
-				<label><b>From</b></label>
-				<input type = "text" placeholder = "From" name="travelfrom">
+				<p><label><b>From</b></label>
+				<input type = "text" placeholder = "From" name="travelfrom"></p>
 				
-				<label><b>To</b></label>
-				<input type = "text" placeholder = "To" name="travelto">
+				<p><label><b>To</b></label>
+				<input type = "text" placeholder = "To" name="travelto"></p>
 				
-				<label><b>Number of Adults</b></label>
+				<p><label><b>Number of Adults</b></label>
 				<select name ="adults">
 					<option value = "1">1</option>
 					<option value = "2">2</option>
@@ -74,9 +82,15 @@ session_start();
 					<option value = "economy">Economy</option>
 					<option value = "business">Business</option>
 					<option value = "firstclass">First Class</option>
-				</select>
+				</select></p>
 				
-				<button type ="submit">GO</button>
+				<label><b>Date from</b></label>
+				<input type = "text" id="datepicker">
+				
+				<label><b>Date to</b></label>
+				<input type = "text" id="datepicker">
+				
+				<p><button type ="submit">GO</button></p>
 				
 				
 	</body>
