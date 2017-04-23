@@ -1,0 +1,31 @@
+body {
+	background-image: url(./images/background.jpg);
+	}
+	
+li {
+	list-style: none;
+	display: inline;
+	text-align: center;
+	}
+
+li a{
+	text-decoration: none;
+	color: #60779b;
+	margin: 5px;
+}
+
+nav {
+	border-style: solid;
+	width: 30%;
+	border-radius: 25px;
+	}
+	
+#login {
+	float: right;
+	display: inline;
+	}
+	
+#logout {
+	float: right;
+	display: inline;
+	}

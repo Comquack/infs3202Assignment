@@ -2,9 +2,10 @@
 <?php
 session_start();
 if(isset($_SESSION['username'])){
-	echo "Hello ".$_SESSION['username'];
+	
 		print("		<div id = \"logout\">
-			<form method=\"POST\" action=\"logout.php\">
+			Hello ".$_SESSION['username'].
+			"<form method=\"POST\" action=\"logout.php\">
 				<div class=\"container\">
 					<button type=\"submit\">Logout</button>
 				</div>
@@ -31,6 +32,7 @@ if(isset($_SESSION['username'])){
 	<head>
 		<meta charset="utf-8">
 		<title> Travel test </title>
+		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script>
@@ -43,7 +45,7 @@ if(isset($_SESSION['username'])){
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="100px" width="100px">
+			<img src = "./images/airline.png" height="80px" width="80px">
 		</div> 
 			
 		<nav>

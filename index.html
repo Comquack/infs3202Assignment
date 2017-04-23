@@ -1,16 +1,43 @@
 <!doctype html>
 <?php
 session_start();
+if(isset($_SESSION['username'])){
+	echo "Hello ".$_SESSION['username'];
+		print("		<div id = \"logout\">
+			<form method=\"POST\" action=\"logout.php\">
+				<div class=\"container\">
+					<button type=\"submit\">Logout</button>
+				</div>
+			</form>
+		</div>");
+		
+}else{
+		print("		<div id = \"login\">
+			<form method=\"POST\" action=\"login.php\">
+				<div class=\"container\">
+					<label><b>Username</b></label>
+					<input type = \"text\" placeholder= \"Username\" name=\"username\">
+					
+					<label><b>Password</b></label>
+					<input type=\"password\" placeholder= \"Password\" name=\"password\">
+					
+					<button type=\"submit\">Login</button>
+				</div>
+			</form>
+		</div>");
+	}
 ?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title> Travel test </title>
+		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script>
   		$( function() {
    			$( "#datepicker" ).datepicker();
+   			$( "#datepicker2" ).datepicker();
   		} );
  		 </script>
 	</head>
@@ -19,20 +46,7 @@ session_start();
 		<div id="logo">
 			<img src = "./images/airline.png" height="100px" width="100px">
 		</div> 
-	
-		<form method="POST" action="login.php">
-			<div class="container">
-				<label><b>Username</b></label>
-				<input type = "text" placeholder= "Username" name="username">
-				
-				<label><b>Password</b></label>
-				<input type="password" placeholder= "Password" name="password">
-				
-				<button type="submit">Login</button>
-				<a href="signup.html">Sign up</a>
-			</div>
-		</form>
-		
+			
 		<nav>
 			<ol>
 				<li><a href ="manage.html"> Manage Bookings</a> </li>
@@ -88,7 +102,7 @@ session_start();
 				<input type = "text" id="datepicker">
 				
 				<label><b>Date to</b></label>
-				<input type = "text" id="datepicker">
+				<input type = "text" id="datepicker2">
 				
 				<p><button type ="submit">GO</button></p>
 				
