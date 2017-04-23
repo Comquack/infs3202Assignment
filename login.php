@@ -21,4 +21,5 @@
 		echo "no";
 		header("Location: index1.php");
 	}
+	mysqli_close($conn);
 ?>
