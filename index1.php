@@ -58,7 +58,7 @@ if(isset($_SESSION['username'])){
 		<nav>
 			<ol>
 				<li><a href ="manage.html"> Manage Bookings</a> </li>
-				<li><a href ="surprise.html">Surprise me</a></li>
+				<li><a href ="surprise.php">Surprise me</a></li>
 			</ol>
 		</nav>
 		
