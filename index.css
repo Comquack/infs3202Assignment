@@ -14,22 +14,11 @@ li a{
 	margin: 5px;
 }
 
-.travelbanner{
-	padding-left: 30px;
-	border-style: solid;
-	margin-top: 30px;
-	width: 70%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 nav {
 	border-style: solid;
 	width: 30%;
 	border-radius: 25px;
 	}
-	
 	
 #login {
 	float: right;
@@ -40,3 +29,23 @@ nav {
 	float: right;
 	display: inline;
 	}
+	
+#travelbanner{
+	border-style: solid;
+	border-radius: 25px;
+	margin-top: 5px;
+	width: 70%;
+	padding-left: 10px;
+}
+
+#hide{
+	margin-top: 5px;
+
+}
+
+.test{
+	float: left;
+	display: inline;
+	text-align: center;
+	margin: 50px;
+}

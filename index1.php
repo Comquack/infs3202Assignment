@@ -62,9 +62,8 @@ if(isset($_SESSION['username'])){
 			</ol>
 		</nav>
 		
-		<form method="POST" action="flight.php">
-		<div class="travelbanner">
-			<div class="container">
+		<div id ="travelbanner">
+			<form method="POST" action="flight.php">
 				<p><label><b>From</b></label>
 				<input type = "text" placeholder = "From" name="travelfrom"></p>
 				
@@ -113,34 +112,36 @@ if(isset($_SESSION['username'])){
 				<input type = "text" id="datepicker2">
 				
 				<p><button type ="submit">GO</button></p>
+			</form>
+		</div>
+		
+		<div id ="hide">
+			<div class="test">
+			<div class="item">
+				<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
+			</div>
+			<div class="moreinfo">
+				<p>Test test</p>
+			</div>
+			</div>
+			
+			<div class="test">
+			<div class="item">
+				<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
+			</div>
+			<div class="moreinfo">
+				<p>Test test</p>
+			</div>
+			</div>
+			
+			<div class="test">
+			<div class="item">
+				<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
+			</div>
+			<div class="moreinfo">
+				<p>Test test</p>
+			</div>
 			</div>
 		</div>
-	</form>
-				
-			<div id="hide">
-				<div class="item">
-					<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
-				</div>
-				<div class="moreinfo">
-					<p>Test test</p>
-				</div>
-				
-				<div class="item">
-					<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
-				</div>
-				<div class="moreinfo">
-					<p>Test test</p>
-				</div>
-				
-				<div class="item">
-					<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
-				</div>
-				<div class="moreinfo">
-					<p>Test test</p>
-				</div>
-			</div>
-					
-
-		<script type="text/javascript" src="index.js"> </script>				
+		<script type="text/javascript" src="index.js"> </script>			
 	</body>
-	
