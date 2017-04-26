@@ -1,25 +1,34 @@
 <?php
 	session_start();
 	$servername = "localhost";
-	$username = "username";
-	$password = "password";
+	$username = "root";
+	$password = "your_password";
+	$database = "users";
 // Create connection
-	$conn = new mysqli($servername, $username, $password);
+	$conn = new mysqli($servername, $username, NULL, $database);
 
 	// Check connection
 	if ($conn->connect_error) {
-		//die("Connection failed: " . $conn->connect_error);
+		die("Connection failed: " . $conn->connect_error);
 	} 
-	echo "Connected successfully";
-	if($_REQUEST['username']=="infs" && $_REQUEST['password']=="3202"){
-		$_SESSION['username'] = "infs";
-		$_SESSION['password'] = "3202";
-		echo "yes";
+	$user = mysqli_real_escape_string($conn,$_REQUEST['username']);
+    $pass = mysqli_real_escape_string($conn,$_REQUEST['password']);
+	$query = "SELECT username FROM user_info WHERE username = '$user' and password = '$pass'";
+    $result = mysqli_query($conn,$query);
+	if(!$result){
+die(mysqli_error($conn)); 
+// useful for debugging
+}
+	$row = mysqli_fetch_array($result);
+	$count = mysqli_num_rows($result);
+	if($count == 1){
+		$_SESSION['username'] = $user;
 		header("Location: index1.php");
 	}
 	else{
-		echo "no";
+		echo $query;
 		header("Location: index1.php");
+
 	}
 	mysqli_close($conn);
 ?>
