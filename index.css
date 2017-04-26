@@ -14,11 +14,22 @@ li a{
 	margin: 5px;
 }
 
+.travelbanner{
+	padding-left: 30px;
+	border-style: solid;
+	margin-top: 30px;
+	width: 70%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 nav {
 	border-style: solid;
 	width: 30%;
 	border-radius: 25px;
 	}
+	
 	
 #login {
 	float: right;

@@ -40,12 +40,19 @@ if(isset($_SESSION['username'])){
    			$( "#datepicker" ).datepicker();
    			$( "#datepicker2" ).datepicker();
   		} );
+  		
+ 		$("img").on('click',function(){
+   		var hello = $(this).attr('data-id');
+   		$('.hideDivs').hide();
+   		$('#'+hello).show();
+ 		});
+ 		
  		 </script>
 	</head>
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="80px" width="80px">
+			<a href ="index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
 		</div> 
 			
 		<nav>
@@ -106,7 +113,34 @@ if(isset($_SESSION['username'])){
 				<input type = "text" id="datepicker2">
 				
 				<p><button type ="submit">GO</button></p>
+			</div>
+		</div>
+	</form>
 				
+			<div id="hide">
+				<div class="item">
+					<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
+				</div>
+				<div class="moreinfo">
+					<p>Test test</p>
+				</div>
 				
+				<div class="item">
+					<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
+				</div>
+				<div class="moreinfo">
+					<p>Test test</p>
+				</div>
+				
+				<div class="item">
+					<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
+				</div>
+				<div class="moreinfo">
+					<p>Test test</p>
+				</div>
+			</div>
+					
+
+		<script type="text/javascript" src="index.js"> </script>				
 	</body>
 	
