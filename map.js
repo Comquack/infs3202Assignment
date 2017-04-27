@@ -1,6 +1,14 @@
 var API = "AIzaSyCMy7POvCCYeCbQz5TO49LqidMkCEFin_A" 
  var map;
- var address ="10 Downing Street London";
+  var Label = {
+        Home: {
+          label: 'H'
+        },
+        Airport: {
+          label: 'A'
+        }
+      };
+
 
 
       function initMap() {
@@ -19,10 +27,11 @@ if (navigator.geolocation) {
 			var centre = new google.maps.LatLng(pos);
 			console.log(centre);
 			map.panTo(centre);
+			var icon = Label["Home"] || {};
 			var marker = new google.maps.Marker({
 				position: centre,
 				map: map,
-				title: 'Home'
+				label: icon.label
 			});
 	
             }, function() {
