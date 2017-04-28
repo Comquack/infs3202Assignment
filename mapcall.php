@@ -1,25 +1,32 @@
 <?php
 	session_start();
 	$servername = "localhost";
-	$username = "username";
-	$password = "password";
-// Create connection
-	$conn = new mysqli($servername, $username, $password);
+	$username = "root";
+	$password = "your_password";
+	$database = "users";
+	$conn = new mysqli($servername, $username, NULL, $database);
+	$dom = new DOMDocument("1.0");
+	$node = $dom->createElement("airport");
+	$parnode = $dom->appendChild($node);
 
-	// Check connection
 	if ($conn->connect_error) {
-		//die("Connection failed: " . $conn->connect_error);
+		die("Connection failed: " . $conn->connect_error);
 	} 
-	echo "Connected successfully";
-	if($_REQUEST['username']=="infs" && $_REQUEST['password']=="3202"){
-		$_SESSION['username'] = "infs";
-		$_SESSION['password'] = "3202";
-		echo "yes";
-		header("Location: index1.php");
-	}
-	else{
-		echo "no";
-		header("Location: index1.php");
-	}
+	$query = "SELECT * FROM locations";
+    $result = mysqli_query($conn,$query);
+	if(!$result){
+die(mysqli_error($conn)); 
+}
+	$count = mysqli_num_rows($result);
+	
+while ($row = mysqli_fetch_array($result)){
+  $node = $dom->createElement("airports");
+  $newnode = $parnode->appendChild($node);
+  $newnode->setAttribute("name",$row['Name']);
+  $newnode->setAttribute("address", $row['address']);
+}
+echo $dom->saveXML();
+
+	
 	mysqli_close($conn);
 ?>
