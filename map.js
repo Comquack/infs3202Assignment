@@ -17,13 +17,27 @@ var API = "AIzaSyCMy7POvCCYeCbQz5TO49LqidMkCEFin_A"
     zoom: 8,
     center: {lat: 0, lng: 0}
 });
-
+var geocoder = new google.maps.Geocoder();
+var markers;
 $.ajax({
   type: 'GET',
   url: '../mapcall.php',
   success: function (data) {
 	  console.log(data);
-     document.getElementsByTagName("airport").innerHTML = data; 
+	   $(data).find("airports").each(function(){
+		var address = $(this).attr("address");
+		geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+			})
+			}
+		})
+
+   });
+   // document.getElementsByTagName("airport").innerHTML = data;
+	// console.log(document.getElementsByTagName("airport").innerHTML);
 	 		
   }
 });
