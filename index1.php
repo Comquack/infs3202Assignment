@@ -40,35 +40,29 @@ if(isset($_SESSION['username'])){
    			$( "#datepicker" ).datepicker();
    			$( "#datepicker2" ).datepicker();
   		} );
-  		
- 		$("img").on('click',function(){
-   		var hello = $(this).attr('data-id');
-   		$('.hideDivs').hide();
-   		$('#'+hello).show();
- 		});
- 		
  		 </script>
 	</head>
 	
 	<body>
 		<div id="logo">
-			<a href ="index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
+			<img src = "./images/airline.png" height="80px" width="80px">
 		</div> 
 			
 		<nav>
 			<ol>
 				<li><a href ="manage.html"> Manage Bookings</a> </li>
-				<li><a href ="surprise.php">Surprise me</a></li>
+				<li><a href ="surprise.html">Surprise me</a></li>
 			</ol>
 		</nav>
 		
-		<div id ="travelbanner">
-			<form method="POST" action="flight.php">
+		<form method="POST" action="flight.php">
+		<div class="travelbanner">
+			<div class="container">
 				<p><label><b>From</b></label>
-				<input type = "text" placeholder = "From" name="travelfrom"></p>
+				<select id = "from" name ="from"></select></p>
 				
 				<p><label><b>To</b></label>
-				<input type = "text" placeholder = "To" name="travelto"></p>
+				<select id = "to" name ="to"></select></p>
 				
 				<p><label><b>Number of Adults</b></label>
 				<select name ="adults">
@@ -112,36 +106,17 @@ if(isset($_SESSION['username'])){
 				<input type = "text" id="datepicker2">
 				
 				<p><button type ="submit">GO</button></p>
-			</form>
-		</div>
-		
-		<div id ="hide">
-			<div class="test">
-			<div class="item">
-				<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
-			</div>
-			<div class="moreinfo">
-				<p>Test test</p>
-			</div>
-			</div>
-			
-			<div class="test">
-			<div class="item">
-				<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
-			</div>
-			<div class="moreinfo">
-				<p>Test test</p>
-			</div>
-			</div>
-			
-			<div class="test">
-			<div class="item">
-				<p><img class="icon" src="./images/airline.png" height="80px" width="80px"></p>
-			</div>
-			<div class="moreinfo">
-				<p>Test test</p>
-			</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="index.js"> </script>			
+				</div>
+				<div id="map"></div>
+				<script src="map.js" type="text/javascript"></script> 
+				</script>
+				<script src="poplists.js" type="text/javascript"></script> 
+				</script>
+				<script async defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMy7POvCCYeCbQz5TO49LqidMkCEFin_A&callback=initMap">
+				</script>
+
+				
+				
 	</body>
+	
