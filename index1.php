@@ -37,8 +37,12 @@ if(isset($_SESSION['username'])){
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script>
   		$( function() {
-   			$( "#datepicker" ).datepicker();
-   			$( "#datepicker2" ).datepicker();
+   			$( "#datepicker" ).datepicker({
+				minDate: 0
+			});
+   			$( "#datepicker2" ).datepicker({
+				minDate: 0
+			});
   		} );
  		 </script>
 	</head>

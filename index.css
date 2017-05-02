@@ -29,23 +29,11 @@ nav {
 	float: right;
 	display: inline;
 	}
-	
-#travelbanner{
-	border-style: solid;
-	border-radius: 25px;
-	margin-top: 5px;
-	width: 70%;
-	padding-left: 10px;
-}
+ #map {
+        height: 500px;
+		width:40%;
+      }
 
-#hide{
-	margin-top: 5px;
-
-}
-
-.test{
-	float: left;
-	display: inline;
-	text-align: center;
-	margin: 50px;
+.ui-datepicker {
+    background: #FFF;
 }
