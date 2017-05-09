@@ -13,8 +13,10 @@
 	} 
 	$user = mysqli_real_escape_string($conn,$_REQUEST['username']);
     $pass = mysqli_real_escape_string($conn,$_REQUEST['password']);
-	$query = "SELECT username FROM user_info WHERE username = '$user' and password = '$pass'";
-    $result = mysqli_query($conn,$query);
+		$stmt1 = $conn->prepare("SELECT username FROM user_info WHERE username = ? and password = ?");
+		$stmt1->bind_param("ss", $user, $pass);
+		$stmt1->execute();
+		$result = $stmt1->get_result();
 	if(!$result){
 die(mysqli_error($conn)); 
 // useful for debugging
@@ -26,7 +28,6 @@ die(mysqli_error($conn));
 		header("Location: index1.php");
 	}
 	else{
-		echo $query;
 		header("Location: index1.php");
 
 	}
