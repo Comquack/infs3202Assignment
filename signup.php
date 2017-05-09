@@ -18,8 +18,10 @@
 	if($pass != $pass2 or $pass == ""){
 			header("Location: signup.html");
 	}
-	$query = "SELECT username FROM user_info WHERE username = '$user'";
-    $result = mysqli_query($conn,$query);
+	$stmt1 = $conn->prepare("SELECT username FROM user_info WHERE username = ? OR email = ?");
+		$stmt1->bind_param("ss", $user, $email);
+		$stmt1->execute();
+		$result = $stmt1->get_result();
 	if(!$result){
 die(mysqli_error($conn)); 
 // useful for debugging
@@ -27,19 +29,14 @@ die(mysqli_error($conn));
 	$row = mysqli_fetch_array($result);
 	$count = mysqli_num_rows($result);
 	if($count == 0){
-		echo ($pass);
-		$query = "INSERT INTO user_info VALUES ('$user','$pass','$email')";
-		echo($query);
-		    $result = mysqli_query($conn,$query);
-	if(!$result){
-	die(mysqli_error($conn)); 
-// useful for debugging
-}
+		$stmt = $conn->prepare("INSERT INTO user_info VALUES (?, ?, ?)");
+		$stmt->bind_param("sss", $user, $pass, $email);
+		$stmt->execute();
+		$_SESSION['username'] = $user;
 		header("Location: index1.php");
 	}
 	else{
-		echo $query;
-		//header("Location: signup.html");
+		header("Location: signup.html");
 
 	}
 	mysqli_close($conn);
