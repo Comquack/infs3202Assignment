@@ -24,10 +24,16 @@ if(isset($_SESSION['username'])){
 		$stmt1->bind_param("s", $user);
 		$stmt1->execute();
 		$result = $stmt1->get_result();
-		print("<table>");
+		print("<table id = \'bookings\'><tr><th>BookingID</th><th>FlightID</th>");
 		while ($row = mysqli_fetch_array($result)){
-			   print($row);
- 
+			print("<tr>");
+			print("<td>");
+			   print($row['ID']);
+			   print("</td>");
+			   print("<td>");
+			   print($row['FlightID']);
+			   print("</td>");
+			print("</tr>");
 		}
 		print("</table>");
 		
