@@ -16,6 +16,8 @@ var API = "AIzaSyCMy7POvCCYeCbQz5TO49LqidMkCEFin_A"
 });
 var geocoder = new google.maps.Geocoder();
 var markers;
+				var directionsService = new google.maps.DirectionsService();
+				directionsDisplay = new google.maps.DirectionsRenderer();
 $.ajax({
   type: 'GET',
   url: '../mapcall.php',
@@ -29,8 +31,7 @@ $.ajax({
               position: results[0].geometry.location
 			})
 			marker.addListener('click', function() {
-			var directionsService = new google.maps.DirectionsService();
-			directionsDisplay = new google.maps.DirectionsRenderer();
+				directionsDisplay.setMap(null);
 			 var request = {
 				origin: pos,
 				destination: results[0].geometry.location,

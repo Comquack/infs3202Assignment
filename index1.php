@@ -25,6 +25,11 @@ if(isset($_SESSION['username'])){
 					<button type=\"submit\">Login</button>
 				</div>
 			</form>
+			<form method=\"POST\" action=\"signup.html\">
+				<div class=\"container\">
+					<button type=\"submit\">Sign up</button>
+				</div>
+			</form>
 		</div>");
 	}
 ?>
@@ -54,7 +59,7 @@ if(isset($_SESSION['username'])){
 			
 		<nav>
 			<ol>
-				<li><a href ="manage.html"> Manage Bookings</a> </li>
+				<li><a href ="manage.php"> Manage Bookings</a> </li>
 				<li><a href ="surprise.html">Surprise me</a></li>
 			</ol>
 		</nav>
@@ -84,6 +89,7 @@ if(isset($_SESSION['username'])){
 				
 				<label><b>Number of Children</b></label>
 				<select name ="child">
+					<option value = "0">0</option>
 					<option value = "1">1</option>
 					<option value = "2">2</option>
 					<option value = "3">3</option>
