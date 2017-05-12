@@ -1,22 +1,15 @@
 <?php
 	session_start();
-	$servername = "infs3202-i7wz2.uqcloud.net";
-	$username = "i7wz2";
-	$password = "i7wz2";
-	$database = "users";
-// Create connection
-	$conn = new mysqli($servername, $username, NULL, $database);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
+	include "phpmyadminconnect.php";
+	
 	$user = mysqli_real_escape_string($conn,$_REQUEST['username']);
     $pass = mysqli_real_escape_string($conn,$_REQUEST['password1']);
 	$pass2 = mysqli_real_escape_string($conn,$_REQUEST['password2']);
 	$email = mysqli_real_escape_string($conn,$_REQUEST['email']);
 	if($pass != $pass2 or $pass == ""){
-			header("Location: signup.html");
+			$_SESSION['error'] = "passwords do not match";
+			header("Location: signup1.php");
+			
 	}
 	$stmt1 = $conn->prepare("SELECT username FROM user_info WHERE username = ? OR email = ?");
 		$stmt1->bind_param("ss", $user, $email);
@@ -36,7 +29,8 @@ die(mysqli_error($conn));
 		header("Location: index1.php");
 	}
 	else{
-		header("Location: signup.html");
+		$_SESSION['error'] = "username taken";
+		header("Location: signup1.php");
 
 	}
 	mysqli_close($conn);
