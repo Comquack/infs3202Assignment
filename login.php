@@ -1,16 +1,7 @@
 <?php
 	session_start();
-	$servername = "localhost";
-	$username = "root";
-	$password = "your_password";
-	$database = "users";
-// Create connection
-	$conn = new mysqli($servername, $username, NULL, $database);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
+	include 'phpmyadminconnect.php';
+	
 	$user = mysqli_real_escape_string($conn,$_REQUEST['username']);
     $pass = mysqli_real_escape_string($conn,$_REQUEST['password']);
 		$stmt1 = $conn->prepare("SELECT username FROM user_info WHERE username = ? and password = ?");

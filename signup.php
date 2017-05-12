@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	$servername = "localhost";
-	$username = "root";
-	$password = "your_password";
+	$servername = "infs3202-i7wz2.uqcloud.net";
+	$username = "i7wz2";
+	$password = "i7wz2";
 	$database = "users";
 // Create connection
 	$conn = new mysqli($servername, $username, NULL, $database);
