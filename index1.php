@@ -42,9 +42,10 @@ if(isset($_SESSION['username'])){
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script>
   		$( function() {
-   			$( "#datepicker" ).datepicker({
-				minDate: 0
-			});
+$('#datepicker').datepicker({
+	minDate: 0,
+	dateFormat: "yy-mm-dd"
+});
    			$( "#datepicker2" ).datepicker({
 				minDate: 0
 			});
@@ -64,7 +65,7 @@ if(isset($_SESSION['username'])){
 			</ol>
 		</nav>
 		
-		<form method="POST" action="flight.php">
+		<form id = "fly" method="POST" action="flightresult.php">
 		<div class="travelbanner">
 			<div class="container">
 				<p><label><b>From</b></label>
@@ -110,7 +111,7 @@ if(isset($_SESSION['username'])){
 				</select></p>
 				
 				<label><b>Date from</b></label>
-				<input type = "text" id="datepicker">
+				<input type = "text" name ="datefrom" id="datepicker">
 				
 				<label><b>Date to</b></label>
 				<input type = "text" id="datepicker2">

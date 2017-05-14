@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 session_start();
-	include "phpmyadminconnect.php";
+include "phpmyadminconnect.php";
 	
 if(isset($_SESSION['username'])){
 	$user = $_SESSION['username'];
@@ -16,24 +16,7 @@ if(isset($_SESSION['username'])){
 					<button type=\"submit\">Logout</button>
 				</div>
 			</form>
-		</div>");
-		$stmt1 = $conn->prepare("SELECT * FROM booking WHERE username = ?");
-		$stmt1->bind_param("s", $user);
-		$stmt1->execute();
-		$result = $stmt1->get_result();
-		print("<table id = \'bookings\'><tr><th>BookingID</th><th>FlightID</th>");
-		while ($row = mysqli_fetch_array($result)){
-			print("<tr>");
-			print("<td>");
-			   print($row['ID']);
-			   print("</td>");
-			   print("<td>");
-			   print($row['FlightID']);
-			   print("</td>");
-			print("</tr>");
-		}
-		print("</table>");
-		
+		</div>");		
 }else{
 		print("		<div id = \"login\">
 			<form method=\"POST\" action=\"login.php\">
@@ -54,11 +37,31 @@ if(isset($_SESSION['username'])){
 			</form>
 		</div>");
 	}
+	$from = mysqli_real_escape_string($conn,$_REQUEST['from']);
+    $to = mysqli_real_escape_string($conn,$_REQUEST['to']);
+	$add = mysqli_real_escape_string($conn,$_REQUEST['adults']);
+	$child = mysqli_real_escape_string($conn,$_REQUEST['child']);
+	$date = mysqli_real_escape_string($conn,$_REQUEST['datefrom']);
+	$class = mysqli_real_escape_string($conn,$_REQUEST['flightclass']);
+
+		$stmt1 = $conn->prepare("SELECT * FROM flights WHERE flyto = ? AND flyfrom = ? AND date = ?");
+		$stmt1->bind_param("sss", $to, $from, $date);
+		$stmt1->execute();
+		$result = $stmt1->get_result();
+		print("<table id = \'flights\'><tr><th>FlightID</th>");
+		while ($row = mysqli_fetch_array($result)){
+			print("<tr>");
+			print("<td>");
+			   print($row['ID']);
+			   print("</td>");
+			print("</tr>");
+		}
+		print("</table>");
 ?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title> Travel test </title>
+		<title> Available Filights </title>
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

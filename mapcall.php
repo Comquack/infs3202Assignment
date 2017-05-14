@@ -1,10 +1,6 @@
 <?php
 	session_start();
-	$servername = "localhost";
-	$username = "root";
-	$password = "your_password";
-	$database = "users";
-	$conn = new mysqli($servername, $username, NULL, $database);
+	include "phpmyadminconnect.php";
 	$dom = new DOMDocument("1.0");
 	$node = $dom->createElement("airport");
 	$parnode = $dom->appendChild($node);
