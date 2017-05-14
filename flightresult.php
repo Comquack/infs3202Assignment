@@ -37,6 +37,9 @@ if(isset($_SESSION['username'])){
 			</form>
 		</div>");
 	}
+		if(!isset($_REQUEST['from'])){
+		header("Location: index1.php");
+	}
 	$from = mysqli_real_escape_string($conn,$_REQUEST['from']);
     $to = mysqli_real_escape_string($conn,$_REQUEST['to']);
 	$add = mysqli_real_escape_string($conn,$_REQUEST['adults']);
@@ -48,7 +51,12 @@ if(isset($_SESSION['username'])){
 		$stmt1->bind_param("sss", $to, $from, $date);
 		$stmt1->execute();
 		$result = $stmt1->get_result();
-		print("<table id = \'flights\'><tr><th>FlightID</th>");
+		
+		$count = mysqli_num_rows($result);
+	if($count == 0){
+		print("<div id=\"err\">flight not found</div>");
+	}else{
+		print("<div id = \"flights\"><table id = \'flight\'><tr><th>FlightID</th>");
 		while ($row = mysqli_fetch_array($result)){
 			print("<tr>");
 			print("<td>");
@@ -56,7 +64,8 @@ if(isset($_SESSION['username'])){
 			   print("</td>");
 			print("</tr>");
 		}
-		print("</table>");
+		print("</table></div>");
+	}
 ?>
 <html lang="en">
 	<head>
@@ -88,10 +97,21 @@ if(isset($_SESSION['username'])){
 				<li><a href ="surprise.html">Surprise me</a></li>
 			</ol>
 		</nav>
+		<div id = "response">
+		</div>
 		
 	
 
 				
-				
+		  	<script>
+				$(document).ready(function() {
+					if(document.getElementById('flights')){
+						document.getElementById('response').appendChild(document.getElementById('flights'));
+					}
+					if(document.getElementById('err')){
+						document.getElementById('response').appendChild(document.getElementById('err'));
+					}
+				});
+ 		 </script>		
 	</body>
 	

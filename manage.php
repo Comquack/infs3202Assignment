@@ -21,7 +21,7 @@ if(isset($_SESSION['username'])){
 		$stmt1->bind_param("s", $user);
 		$stmt1->execute();
 		$result = $stmt1->get_result();
-		print("<table id = \'bookings\'><tr><th>BookingID</th><th>FlightID</th>");
+		print("<table id = \"bookings\"><tr><th>BookingID</th><th>FlightID</th>");
 		while ($row = mysqli_fetch_array($result)){
 			print("<tr>");
 			print("<td>");
@@ -85,10 +85,18 @@ if(isset($_SESSION['username'])){
 				<li><a href ="surprise.html">Surprise me</a></li>
 			</ol>
 		</nav>
+		<div id = "response">
+		</div>
 		
 	
 
 				
-				
+		<script>
+				$(document).ready(function() {
+					if(document.getElementById('bookings')){
+						document.getElementById('response').appendChild(document.getElementById('bookings'));
+					}
+				});
+ 		 </script>			
 	</body>
 	
