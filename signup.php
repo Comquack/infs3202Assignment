@@ -22,8 +22,9 @@ die(mysqli_error($conn));
 	$row = mysqli_fetch_array($result);
 	$count = mysqli_num_rows($result);
 	if($count == 0){
+		$passhash = hash('ripemd160',$pass);
 		$stmt = $conn->prepare("INSERT INTO user_info VALUES (?, ?, ?)");
-		$stmt->bind_param("sss", $user, $pass, $email);
+		$stmt->bind_param("sss", $user, $passhash, $email);
 		$stmt->execute();
 		$_SESSION['username'] = $user;
 		header("Location: index1.php");

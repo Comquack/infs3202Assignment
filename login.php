@@ -4,8 +4,9 @@
 	
 	$user = mysqli_real_escape_string($conn,$_REQUEST['username']);
     $pass = mysqli_real_escape_string($conn,$_REQUEST['password']);
+	$passhash = hash('ripemd160',$pass);
 		$stmt1 = $conn->prepare("SELECT username FROM user_info WHERE username = ? and password = ?");
-		$stmt1->bind_param("ss", $user, $pass);
+		$stmt1->bind_param("ss", $user, $passhash);
 		$stmt1->execute();
 		$result = $stmt1->get_result();
 	if(!$result){
