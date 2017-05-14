@@ -2,41 +2,8 @@
 <?php
 session_start();
 include "phpmyadminconnect.php";
-	
-if(isset($_SESSION['username'])){
-	$user = $_SESSION['username'];
-	$conn = new mysqli($servername, $username, NULL, $database);
-		if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
-		print("		<div id = \"logout\">
-			Hello ".$_SESSION['username'].
-			"<form method=\"POST\" action=\"logout.php\">
-				<div class=\"container\">
-					<button type=\"submit\">Logout</button>
-				</div>
-			</form>
-		</div>");		
-}else{
-		print("		<div id = \"login\">
-			<form method=\"POST\" action=\"login.php\">
-				<div class=\"container\">
-					<label><b>Username</b></label>
-					<input type = \"text\" placeholder= \"Username\" name=\"username\">
-					
-					<label><b>Password</b></label>
-					<input type=\"password\" placeholder= \"Password\" name=\"password\">
-					
-					<button type=\"submit\">Login</button>
-				</div>
-			</form>
-			<form method=\"POST\" action=\"signup.html\">
-				<div class=\"container\">
-					<button type=\"submit\">Sign up</button>
-				</div>
-			</form>
-		</div>");
-	}
+include "loginbar.php";
+
 		if(!isset($_REQUEST['from'])){
 		header("Location: index1.php");
 	}

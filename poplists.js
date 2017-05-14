@@ -3,7 +3,7 @@ $.ajax({
   url: '../mapcall.php',
   success: function (data) {
 	   $(data).find("airports").each(function(){
-			var address = $(this).attr("address");	
+			var address = $(this).attr("Name");	
 			var to = document.getElementById("to");
 			opt = document.createElement("option");
 			opt.text=address;
