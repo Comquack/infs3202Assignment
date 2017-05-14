@@ -1,38 +1,31 @@
 <!doctype html>
 <?php
 session_start();
-if(isset($_SESSION['username'])){
-	
-		print("		<div id = \"logout\">
-			Hello ".$_SESSION['username'].
-			"<form method=\"POST\" action=\"logout.php\">
-				<div class=\"container\">
-					<button type=\"submit\">Logout</button>
-				</div>
-			</form>
-		</div>");
-		
-}else{
-		print("		<div id = \"login\">
-			<form method=\"POST\" action=\"login.php\">
-				<div class=\"container\">
-					<label><b>Username</b></label>
-					<input type = \"text\" placeholder= \"Username\" name=\"username\">
-					
-					<label><b>Password</b></label>
-					<input type=\"password\" placeholder= \"Password\" name=\"password\">
-					
-					<button type=\"submit\">Login</button>
-				</div>
-			</form>
-		</div>");
-	}
+include 'phpmyadminconnect.php';
+include "loginbar.php";
+		$stmt1 = $conn->prepare("SELECT * FROM locations");
+		$stmt1->execute();
+		$result = $stmt1->get_result();
+		$i = 1;
+		while ($i<4 and $row = mysqli_fetch_array($result)){
+			Print("<div id =\"pick".$i."\">
+				<img src = \"./images/".$row['City'].".jpg\" height=\"80px\" width=\"80px\">
+				".$row['City']."
+				<form action = ".$row['link'].">
+				<button type = \"submit\">INFO</button>
+				</form>
+				<button type = \"submit\">BOOK</button>
+			</div>");
+			$i = $i+1;
+		}
 ?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title> Surprise me </title>
 		<link rel="stylesheet" type="text/css" href="index.css">
+				<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>
 	
 	<body>
@@ -48,23 +41,20 @@ if(isset($_SESSION['username'])){
 		</nav>
 		
 		<div id="pickone">
-			<div id ="pick1">
-				<img src = "./images/airline.png" height="80px" width="80px">
-				<button type = "submit">INFO</button>
-				<button type = "submit">BOOK</button>
-			<div>
-			
-			<div id ="pick2">
-				<img src = "./images/airline.png" height="80px" width="80px">
-				<button type = "submit">INFO</button>
-				<button type = "submit">BOOK</button>
-			</div>
-			
-			<div id = "pick3">
-				<img src = "./images/airline.png" height="80px" width="80px">
-				<button type = "submit">INFO</button>
-				<button type = "submit">BOOK</button>
-			</div>
+	
 		</div>
+							  	<script>
+				$(document).ready(function() {
+					if(document.getElementById('pick1')){
+						document.getElementById('pickone').appendChild(document.getElementById('pick1'));
+					}
+					if(document.getElementById('pick2')){
+						document.getElementById('pickone').appendChild(document.getElementById('pick2'));
+					}
+						if(document.getElementById('pick3')){
+						document.getElementById('pickone').appendChild(document.getElementById('pick3'));
+					}
+				});
+ 		 </script>	
 	</body>
 </html>

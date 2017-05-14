@@ -82,7 +82,7 @@ if(isset($_SESSION['username'])){
 		<nav>
 			<ol>
 				<li><a href ="index1.php"> Home</a> </li>
-				<li><a href ="surprise.html">Surprise me</a></li>
+				<li><a href ="surprise.php">Surprise me</a></li>
 			</ol>
 		</nav>
 		<div id = "response">
