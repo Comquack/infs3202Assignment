@@ -26,7 +26,7 @@ include "loginbar.php";
 		print("<div id = \"flights\"><table id = \'flight\'><tr><th>FlightID</th>");
 		while ($row = mysqli_fetch_array($result)){
 			print("<tr>");
-			print("<td>");
+			print("<td name = \"element\">");
 			   print($row['ID']);
 			   print("</td>");
 			print("</tr>");
@@ -66,7 +66,14 @@ include "loginbar.php";
 		</nav>
 		<div id = "response">
 		</div>
-		
+				<form id = "fly" method="POST" action="bookflight.php">
+		<div class="travelbanner">
+			<div class="container">
+				<p><label><b>Choose flight</b></label>
+				<select id = "result" name ="result"></select></p>
+
+				<p><button type ="submit">GO</button></p>
+				</div>
 	
 
 				
@@ -74,6 +81,15 @@ include "loginbar.php";
 				$(document).ready(function() {
 					if(document.getElementById('flights')){
 						document.getElementById('response').appendChild(document.getElementById('flights'));
+						var address = document.getElementsByName('element');
+						console.log(address.length);
+						var to = document.getElementById("result");
+						for (var i=0; i < address.length; i++){
+							console.log(i);
+							opt = document.createElement("option");
+							opt.text=address[i].textContent;
+							to.add(opt);
+						}
 					}
 					if(document.getElementById('err')){
 						document.getElementById('response').appendChild(document.getElementById('err'));
