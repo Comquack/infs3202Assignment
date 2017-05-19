@@ -35,7 +35,7 @@ include "loginbar.php";
 		
 		<nav>
 			<ol>
-				<li><a href ="manage.html"> Manage Bookings</a> </li>
+				<li><a href ="manage.php"> Manage Bookings</a> </li>
 				<li><a href ="surprise.php">Surprise me</a></li>
 			</ol>
 		</nav>
@@ -43,7 +43,7 @@ include "loginbar.php";
 		<div id="pickone">
 	
 		</div>
-							  	<script>
+		<script>
 				$(document).ready(function() {
 					if(document.getElementById('pick1')){
 						document.getElementById('pickone').appendChild(document.getElementById('pick1'));

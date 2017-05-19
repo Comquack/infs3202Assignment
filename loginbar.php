@@ -22,7 +22,7 @@ if(isset($_SESSION['username'])){
 					<button type=\"submit\">Login</button>
 				</div>
 			</form>
-			<form method=\"POST\" action=\"signup.html\">
+			<form method=\"POST\" action=\"signup1.php\">
 				<div class=\"container\">
 					<button type=\"submit\">Sign up</button>
 				</div>

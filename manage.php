@@ -5,10 +5,6 @@ session_start();
 	
 if(isset($_SESSION['username'])){
 	$user = $_SESSION['username'];
-	$conn = new mysqli($servername, $username, NULL, $database);
-		if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
 		print("		<div id = \"logout\">
 			Hello ".$_SESSION['username'].
 			"<form method=\"POST\" action=\"logout.php\">

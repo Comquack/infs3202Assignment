@@ -15,14 +15,13 @@ die(mysqli_error($conn));
 	$row = mysqli_fetch_array($result);
 	$count = mysqli_num_rows($result);
 	if($count == 0){
-		$stmt = $conn->prepare("INSERT INTO booking VALUES (?,NULL ,?)");
-		$stmt->bind_param("ss", $user, $ID);
+		$stmt = $conn->prepare("INSERT INTO booking VALUES (NULL,? ,?)");
+		$stmt->bind_param("ss", $ID,$user);
 		$stmt->execute();
 		header("Location: manage.php");
-	}
-
-	}else{
+	}else{header("Location: manage.php");}
+}else{
 		header("Location: signup1.php");
-	}
+}
 	mysqli_close($conn);
 ?>
