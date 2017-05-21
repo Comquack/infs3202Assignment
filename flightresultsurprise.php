@@ -23,7 +23,7 @@ include "loginbar.php";
 			print("<td name = \"element\">");
 			   print($row['ID']);
 			   print("</td>");
-			   print("<td name = \"element\">");
+			   print("<td name = \"john\">");
 			   print($row['flyfrom']);
 			   print("</td>");
 			print("</tr>");
