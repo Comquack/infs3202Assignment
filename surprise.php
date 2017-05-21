@@ -7,6 +7,7 @@ include "loginbar.php";
 		$stmt1->execute();
 		$result = $stmt1->get_result();
 		$i = 1;
+		shuffle($result);
 		while ($i<4 and $row = mysqli_fetch_array($result)){
 			Print("<div id =\"pick".$i."\">
 				<img src = \"./images/".$row['City'].".jpg\" height=\"80px\" width=\"80px\">
