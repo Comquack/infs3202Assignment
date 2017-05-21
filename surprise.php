@@ -14,7 +14,9 @@ include "loginbar.php";
 				<form action = ".$row['link'].">
 				<button type = \"submit\">INFO</button>
 				</form>
-				<button type = \"submit\">BOOK</button>
+				<form action = \"flightresultsurprise.php\"> 
+					<button type = \"submit\" name=\"to\" value=".$row['City'].">BOOK</button>
+				</form>
 			</div>");
 			$i = $i+1;
 		}
