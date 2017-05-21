@@ -11,11 +11,12 @@ if(isset($_SESSION['error'])){
 	<head>
 		<meta charset="utf-8">
 		<title> Sign Up! </title>
+		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="100px" width="100px">
+			<a href ="index1.php"><img src = "./images/airline.png" height="100px" width="100px">
 		</div> 
 			<form method="POST" action="signup.php">
 			  <div class="container">
