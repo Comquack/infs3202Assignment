@@ -31,6 +31,7 @@ if(isset($_SESSION['username'])){
 		print("</table>");
 		
 }else{
+header("Location: login.html");
 		print("		<div id = \"login\">
 			<form method=\"POST\" action=\"login.php\">
 				<div class=\"container\">

@@ -44,50 +44,15 @@ $('#datepicker').datepicker({
 				<p><label><b>To</b></label>
 				<select id = "to" name ="to"></select></p>
 				
-				<p><label><b>Number of Adults</b></label>
-				<select name ="adults">
-					<option value = "1">1</option>
-					<option value = "2">2</option>
-					<option value = "3">3</option>
-					<option value = "4">4</option>
-					<option value = "5">5</option>
-					<option value = "6">6</option>
-					<option value = "7">7</option>
-					<option value = "8">8</option>
-					<option value = "9">9</option>
-					<option value = "10">10</option>
-				</select>
-				
-				<label><b>Number of Children</b></label>
-				<select name ="child">
-					<option value = "0">0</option>
-					<option value = "1">1</option>
-					<option value = "2">2</option>
-					<option value = "3">3</option>
-					<option value = "4">4</option>
-					<option value = "5">5</option>
-					<option value = "6">6</option>
-					<option value = "7">7</option>
-					<option value = "8">8</option>
-					<option value = "9">9</option>
-					<option value = "10">10</option>
-				</select>
-				
-				<label><b>Flight Class</b></label>
-				<select name ="flightclass">
-					<option value = "economy">Economy</option>
-					<option value = "business">Business</option>
-					<option value = "firstclass">First Class</option>
-				</select></p>
 				
 				<label><b>Date from</b></label>
 				<input type = "text" name ="datefrom" id="datepicker">
-				
-				<label><b>Date to</b></label>
-				<input type = "text" id="datepicker2">
-				
+
 				<p><button type ="submit">GO</button></p>
 				</div>
+				
+				
+				<p>Get Directions from where you are to the airport!</p>
 				<div id="map"></div>
 				<script src="map.js" type="text/javascript"></script> 
 				</script>
