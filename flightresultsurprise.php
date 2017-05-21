@@ -8,7 +8,6 @@ include "loginbar.php";
 		header("Location: index1.php");
 	}
     $to = mysqli_real_escape_string($conn,$_REQUEST['to']);
-
 		$stmt1 = $conn->prepare("SELECT * FROM flights WHERE flyto = ?");
 		$stmt1->bind_param("s", $to);
 		$stmt1->execute();
