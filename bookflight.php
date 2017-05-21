@@ -21,7 +21,7 @@ die(mysqli_error($conn));
 		header("Location: manage.php");
 	}else{header("Location: manage.php");}
 }else{
-		header("Location: signup1.php");
+		header("Location: login.html");
 }
 	mysqli_close($conn);
 ?>
