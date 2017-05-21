@@ -75,6 +75,31 @@ if (navigator.geolocation) {
 		})};
       }
 	  
+$("#from").change(function(){
+	address = $("#from").val()
+	directionsDisplay.setMap(null);
+		var geocoder = new google.maps.Geocoder();
+		var directionsService = new google.maps.DirectionsService();
+				directionsDisplay = new google.maps.DirectionsRenderer();
+				
+			geocoder.geocode({'address': address}, function(results, status) {
+				console.log(address);
+				directionsDisplay.setMap(null);
+			 var request = {
+				origin: pos,
+				destination: results[0].geometry.location,
+				travelMode: 'DRIVING'
+			};
+			directionsDisplay.setMap(map);
+			directionsService.route(request, function(result, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(result);
+    }
+  });
 
+
+        });
+			
+})
 	  
 	  
