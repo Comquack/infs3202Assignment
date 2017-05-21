@@ -18,8 +18,8 @@ die(mysqli_error($conn));
 while ($row = mysqli_fetch_array($result)){
   $node = $dom->createElement("airports");
   $newnode = $parnode->appendChild($node);
-  $newnode->setAttribute("name",$row['address']);
-  $newnode->setAttribute("address", $row['name']);
+  $newnode->setAttribute("name",$row['name']);
+  $newnode->setAttribute("address", $row['address']);
 }
 echo $dom->saveXML();
 
