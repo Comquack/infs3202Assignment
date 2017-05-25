@@ -3,6 +3,6 @@ body {
 	}
 	
 form {
-	display: inline-block;
 	text-align: center;
+	margin-top: 50px;
 }

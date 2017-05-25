@@ -11,7 +11,7 @@ if(isset($_SESSION['error'])){
 	<head>
 		<meta charset="utf-8">
 		<title> Sign Up! </title>
-		<link rel="stylesheet" type="text/css" href="signup.css">
+		<link rel="stylesheet" type="text/css" href="test.css">
 	</head>
 	
 	<body>
@@ -41,7 +41,7 @@ if(isset($_SESSION['error'])){
 				</p>
 
 				<div class="clearfix">
-				  <button type="button"  class="cancelbtn">Cancel</button>
+				  <a href = "index1.php"><button type="button"  class="cancelbtn">Cancel</button></a>
 				  <button type="submit" class="signupbtn">Sign Up</button>
 				</div>
 			  </div>
