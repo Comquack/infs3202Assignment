@@ -54,7 +54,7 @@ include "loginbar.php";
 				<a href="about.html"><li> About Us </li></a>
 				<a href=""><li> Contact Us </li></a>
 			</ul>
-		</div>
+				</div>
 		<script>
 				$(document).ready(function() {
 					if(document.getElementById('pick1')){

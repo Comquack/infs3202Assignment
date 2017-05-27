@@ -82,7 +82,7 @@ nav {
 
 
 #footer{
-	margin-top: 15px;
+	margin-top:15px;
 	border-style: solid;
 	border-color: #285174;
 	background-color: #D8DBE1;
@@ -90,11 +90,10 @@ nav {
     bottom: 0;
     height: 70px;
     width: 100%;
-    color: white;
 	}
 	
 ul{
-	padding-top: 5px;
+	padding-top: 15px;
 	}
 
 
