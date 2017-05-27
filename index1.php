@@ -8,6 +8,7 @@ include "loginbar.php";
 		<meta charset="utf-8">
 		<title> Travel test </title>
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script>
@@ -30,22 +31,24 @@ $('#datepicker').datepicker({
 			
 		<nav>
 			<ol>
-				<li><a href ="manage.php"> Manage Bookings</a> </li>
-				<li><a href ="surprise.php">Surprise me</a></li>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
 			</ol>
 		</nav>
 		
 		<form id = "fly" method="POST" action="flightresult.php">
 		<div class="travelbanner">
 			<div class="container">
-				<p><label><b>From</b></label>
+				<p><label><b>FROM</b></label>
 				<select id = "from" name ="from"></select></p>
 				
-				<p><label><b>To</b></label>
+				<p><label><b>TO</b></label>
 				<select id = "to" name ="to"></select></p>
 				
 				
-				<label><b>Date from</b></label>
+				<label><b>DATE</b></label>
 				<input type = "text" name ="datefrom" id="datepicker">
 
 				<p><button type ="submit">GO</button></p>

@@ -38,7 +38,7 @@ include "loginbar.php";
 		<nav>
 			<ol>
 				<li><a href ="manage.php"> Manage Bookings</a> </li>
-				<li><a href ="surprise.php">Surprise me</a></li>
+				<li><a href ="surprise.php">Surprise m</a></li>
 			</ol>
 		</nav>
 		

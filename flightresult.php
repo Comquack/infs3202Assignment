@@ -23,11 +23,14 @@ include "loginbar.php";
 	if($count == 0){
 		print("<div id=\"err\">flight not found</div>");
 	}else{
-		print("<div id = \"flights\"><table id = \'flight\'><tr><th>FlightID</th>");
+		print("<div id = \"flights\"><table id = \'flight\'><tr><th>FlightID</th><th>Price</th>");
 		while ($row = mysqli_fetch_array($result)){
 			print("<tr>");
 			print("<td name = \"element\">");
 			   print($row['ID']);
+			   print("</td>");
+			   	print("<td>");
+			   print($row['price']);
 			   print("</td>");
 			print("</tr>");
 		}
@@ -55,7 +58,7 @@ include "loginbar.php";
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="80px" width="80px">
+			<a href ="index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
 		</div> 
 			
 		<nav>
