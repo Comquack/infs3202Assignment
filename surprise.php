@@ -26,24 +26,34 @@ include "loginbar.php";
 		<meta charset="utf-8">
 		<title> Surprise me </title>
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
 				<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>
 	
 	<body>
 		<div id="logo">
-			<a href ="index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
+			<img src = "./images/airline.png" height="80px" width="80px">
 		</div> 
-		
+			
 		<nav>
 			<ol>
-				<li><a href ="manage.php"> Manage Bookings</a> </li>
-				<li><a href ="surprise.php">Surprise m</a></li>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
 			</ol>
 		</nav>
 		
 		<div id="pickone">
 	
+		</div>
+		
+		<div id="footer">
+			<ul>
+				<a href="about.html"><li> About Us </li></a>
+				<a href=""><li> Contact Us </li></a>
+			</ul>
 		</div>
 		<script>
 				$(document).ready(function() {

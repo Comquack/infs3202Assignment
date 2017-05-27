@@ -52,11 +52,19 @@ $('#datepicker').datepicker({
 				<input type = "text" name ="datefrom" id="datepicker">
 
 				<p><button type ="submit">GO</button></p>
-				</div>
-				
-				
+			</div>
+		</div>
+		</form>
+
 				<p>Get Directions from where you are to the airport!</p>
-				<div id="map"></div>
+				<div id="map">
+				</div>
+				<div id="footer">
+					<ul>
+						<a href="about.html"><li> About Us </li></a>
+						<a href=""><li> Contact Us </li></a>
+					</ul>
+				</div>
 				<script src="map.js" type="text/javascript"></script> 
 				</script>
 				<script src="poplists.js" type="text/javascript"></script> 
