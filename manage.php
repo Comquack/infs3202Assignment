@@ -13,7 +13,7 @@ if(isset($_SESSION['username'])){
 				</div>
 			</form>
 		</div>");
-		$stmt1 = $conn->prepare("SELECT * FROM booking, flights WHERE username = ? AND flightID=ID");
+		$stmt1 = $conn->prepare("SELECT * FROM booking, flights WHERE username = ? AND booking.flightID=flights.ID");
 		$stmt1->bind_param("s", $user);
 		$stmt1->execute();
 		$result = $stmt1->get_result();
