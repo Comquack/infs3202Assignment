@@ -69,7 +69,7 @@ header("Location: login.html");
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="80px" width="80px">
+			<a href="index1.php"><img src = "./images/airline.png" alt="airline logo" height="80px" width="80px"></a>
 		</div> 
 			
 		<nav>
@@ -86,7 +86,6 @@ header("Location: login.html");
 		<div id="footer">
 			<ul>
 				<a href="about.html"><li> About Us </li></a>
-				<a href=""><li> Contact Us </li></a>
 			</ul>
 		</div>
 	

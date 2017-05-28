@@ -58,15 +58,18 @@ include "loginbar.php";
 	
 	<body>
 		<div id="logo">
-			<a href ="index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
+			<img src = "./images/airline.png" alt="airline logo" height="80px" width="80px">
 		</div> 
 			
 		<nav>
 			<ol>
-				<li><a href ="index1.php"> Home</a> </li>
-				<li><a href ="surprise.html">Surprise me</a></li>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
 			</ol>
 		</nav>
+		
 		<div id = "response">
 		</div>
 				<form id = "fly" method="POST" action="bookflight.php">

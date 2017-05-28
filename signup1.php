@@ -11,14 +11,23 @@ if(isset($_SESSION['error'])){
 	<head>
 		<meta charset="utf-8">
 		<title> Sign Up! </title>
-		<link rel="stylesheet" type="text/css" href="test.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	
 	<body>
 		<div id="logo">
-			<a href = "index1.php"><img src = "./images/airline.png" height="100px" width="100px"></a>
+			<a href="index1.php"><img src = "./images/airline.png" alt="airline logo" height="80px" width="80px"></a>
 		</div> 
-			<form method="POST" action="signup.php">
+			
+		<nav>
+			<ol>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
+			</ol>
+		</nav>
+			<form id="signup" method="POST" action="signup.php">
 			  <div class="container">
 			  	<p>
 			  	<label><b>Username</b></label>
@@ -46,6 +55,12 @@ if(isset($_SESSION['error'])){
 				</div>
 			  </div>
 			</form>
+			
+			<div id="footer">
+			<ul>
+				<a href="about.html"><li> About Us </li></a>
+			</ul>
+		</div>
 			
 	</body>
 </html>

@@ -26,7 +26,7 @@ $('#datepicker').datepicker({
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="80px" width="80px">
+			<img src = "./images/airline.png" alt="airline logo" height="80px" width="80px">
 		</div> 
 			
 		<nav>
@@ -56,13 +56,12 @@ $('#datepicker').datepicker({
 		</div>
 		</form>
 
-				<p>Get Directions from where you are to the airport!</p>
+				<p><h3>Get Directions to the airport!</h3></p>
 				<div id="map">
 				</div>
 				<div id="footer">
 					<ul>
 						<a href="about.html"><li> About Us </li></a>
-						<a href=""><li> Contact Us </li></a>
 					</ul>
 				</div>
 				<script src="map.js" type="text/javascript"></script> 

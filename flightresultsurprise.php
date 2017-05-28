@@ -17,14 +17,17 @@ include "loginbar.php";
 	if($count == 0){
 		print("<div id=\"err\">flight not found</div>");
 	}else{
-		print("<div id = \"flights\"><table id = \'flight\'><tr><th>FlightID</th>");
+		print("<div id = \"flights\"><table id = \'flight\'><tr><th>FlightID</th><th>Flying From</th><th>Price</th>");
 		while ($row = mysqli_fetch_array($result)){
 			print("<tr>");
-			print("<td name = \"element\">");
+			print("<td>");
 			   print($row['ID']);
 			   print("</td>");
-			   print("<td name = \"john\">");
+			   print("<td>");
 			   print($row['flyfrom']);
+			   print("</td>");
+			   print("<td>");
+			   print($row['price']);
 			   print("</td>");
 			print("</tr>");
 		}
@@ -42,13 +45,15 @@ include "loginbar.php";
 	
 	<body>
 		<div id="logo">
-			<a href ="index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
+			<img src = "./images/airline.png" alt="airline logo" height="80px" width="80px">
 		</div> 
 			
 		<nav>
 			<ol>
-				<li><a href ="index1.php"> Home</a> </li>
-				<li><a href ="surprise.html">Surprise me</a></li>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
 			</ol>
 		</nav>
 		<div id = "response">
@@ -84,4 +89,5 @@ include "loginbar.php";
 				});
  		 </script>		
 	</body>
+</html>
 	

@@ -7,10 +7,19 @@
 	
 	<body>
 		<div id="logo">
-			<a href = "index1.php"><img src = "./images/airline.png" height="100px" width="100px"></a>
+			<a href="index1.php"><img src = "./images/airline.png" alt="airline logo" height="80px" width="80px"></a>
 		</div> 
+			
+		<nav>
+			<ol>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
+			</ol>
+		</nav>
 	
-	<form method="POST" action="login.php">
+	<form id="signup" method="POST" action="login.php">
 			  <div class="container">
 			  	<p>
 			  	<label><b>Username</b></label>
@@ -23,10 +32,16 @@
 				</p>
 
 
-				  <button type="submit" class="signupbtn">login</button>
-				  <a href = "signup1.php">sign up</a>
-				  <a href = "index1.php">Home</a>
+				  <button type="submit" class="signupbtn">Login</button>
+				  <a href = "signup1.php"><button type="">Sign Up</button></a>
+				  <a href = "index1.php"><button type="">Cancel</button></a>
 			  </div>
 			</form>
+			
+			<div id="footer">
+				<ul>
+					<a href="about.html"><li> About Us </li></a>
+				</ul>
+			</div>
 	</body>
 </html>

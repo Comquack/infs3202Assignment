@@ -9,7 +9,7 @@ include "loginbar.php";
 		$i = 1;
 		while ($i<4 and $row = mysqli_fetch_array($result)){
 			Print("<div id =\"pick".$i."\">
-				<img src = \"./images/".$row['City'].".jpg\" height=\"80px\" width=\"80px\">
+				<img src = \"./images/".$row['City'].".jpg\" height=\"200px\" width=\"200px\">
 				".$row['City']."
 				<form action = ".$row['link'].">
 				<button type = \"submit\">INFO</button>
@@ -33,7 +33,7 @@ include "loginbar.php";
 	
 	<body>
 		<div id="logo">
-			<a href = "index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
+			<a href = "index1.php"><img src = "./images/airline.png" alt="airline logo" height="80px" width="80px"></a>
 		</div>
 			
 		<nav>
@@ -44,15 +44,15 @@ include "loginbar.php";
 				<li><a href ="surprise.php">SURPRISE ME</a></li>
 			</ol>
 		</nav>
-		
-		<div id="pickone">
+		<div id = "test1">
+			<div id="pickone">
 	
+			</div>
 		</div>
 		
 		<div id="footer">
 			<ul>
 				<a href="about.html"><li> About Us </li></a>
-				<a href=""><li> Contact Us </li></a>
 			</ul>
 				</div>
 		<script>
