@@ -33,8 +33,8 @@ include "loginbar.php";
 	
 	<body>
 		<div id="logo">
-			<img src = "./images/airline.png" height="80px" width="80px">
-		</div> 
+			<a href = "index1.php"><img src = "./images/airline.png" height="80px" width="80px"></a>
+		</div>
 			
 		<nav>
 			<ol>
