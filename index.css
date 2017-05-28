@@ -98,10 +98,12 @@ ul{
 	
 #pickone{
 	border-style: solid;
+	text-align: center;
 	}	
 	
 #bookings, th, td {
    border: 1px solid black;
 }
+
 
 
