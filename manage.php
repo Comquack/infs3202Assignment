@@ -13,11 +13,11 @@ if(isset($_SESSION['username'])){
 				</div>
 			</form>
 		</div>");
-		$stmt1 = $conn->prepare("SELECT * FROM booking WHERE username = ?");
+		$stmt1 = $conn->prepare("SELECT * FROM booking, flights WHERE username = ? AND flightID=ID");
 		$stmt1->bind_param("s", $user);
 		$stmt1->execute();
 		$result = $stmt1->get_result();
-		print("<table id = \"bookings\"><tr><th>BookingID</th><th>FlightID</th>");
+		print("<table id = \"bookings\"><tr><th>BookingID</th><th>FlightID</th><th>Flying From</th><th>Flying to</th>");
 		while ($row = mysqli_fetch_array($result)){
 			print("<tr>");
 			print("<td>");
@@ -25,6 +25,12 @@ if(isset($_SESSION['username'])){
 			   print("</td>");
 			   print("<td>");
 			   print($row['FlightID']);
+			   print("</td>");
+			   print("<td>");
+			   print($row['flyfrom']);
+			   print("</td>");
+			   print("<td>");
+			   print($row['flyto']);
 			   print("</td>");
 			print("</tr>");
 		}
@@ -59,16 +65,6 @@ header("Location: login.html");
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  		<script>
-  		$( function() {
-   			$( "#datepicker" ).datepicker({
-				minDate: 0
-			});
-   			$( "#datepicker2" ).datepicker({
-				minDate: 0
-			});
-  		} );
- 		 </script>
 	</head>
 	
 	<body>
@@ -78,13 +74,21 @@ header("Location: login.html");
 			
 		<nav>
 			<ol>
-				<li><a href ="index1.php"> Home</a> </li>
-				<li><a href ="surprise.php">Surprise me</a></li>
+				<li><a href ="index1.php"> HOME</a></li>
+				<li><a href ="about.html"> ABOUT US </a></li>
+				<li><a href ="manage.php"> BOOKINGS</a> </li>
+				<li><a href ="surprise.php">SURPRISE ME</a></li>
 			</ol>
 		</nav>
+		
 		<div id = "response">
 		</div>
-		
+		<div id="footer">
+			<ul>
+				<a href="about.html"><li> About Us </li></a>
+				<a href=""><li> Contact Us </li></a>
+			</ul>
+		</div>
 	
 
 				
@@ -94,6 +98,7 @@ header("Location: login.html");
 						document.getElementById('response').appendChild(document.getElementById('bookings'));
 					}
 				});
- 		 </script>			
+ 		 </script>	
+ 		 		
 	</body>
 	

@@ -95,5 +95,13 @@ nav {
 ul{
 	padding-top: 15px;
 	}
+	
+#pickone{
+	border-style: solid;
+	}	
+	
+#bookings, th, td {
+   border: 1px solid black;
+}
 
 
